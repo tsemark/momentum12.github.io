@@ -80,4 +80,47 @@
 
 		}
 
+	// Testimonial Carousel functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		let slideIndex = 1;
+		const slides = document.getElementsByClassName("testimonial-slide");
+		const dots = document.getElementsByClassName("dot");
+		const prev = document.querySelector(".prev");
+		const next = document.querySelector(".next");
+
+		// Initialize
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		if(prev) prev.addEventListener('click', () => plusSlides(-1));
+		if(next) next.addEventListener('click', () => plusSlides(1));
+
+		// Dot controls
+		Array.from(dots).forEach((dot, index) => {
+			dot.addEventListener('click', () => currentSlide(index + 1));
+		});
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			if (n > slides.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = slides.length}
+
+			Array.from(slides).forEach(slide => slide.style.display = "none");
+			Array.from(dots).forEach(dot => dot.classList.remove("active"));
+
+			slides[slideIndex-1].style.display = "block";
+			dots[slideIndex-1].classList.add("active");
+		}
+
+		// Auto advance slides every 5 seconds
+		setInterval(() => plusSlides(1), 5000);
+	});
+
 })(jQuery);

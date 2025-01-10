@@ -3997,3 +3997,137 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+/* Testimonial Carousel Styles */
+.testimonial-carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-slide {
+    display: none;
+    animation: fade 0.8s ease-in-out;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+.testimonial-content {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.testimonial-image {
+    flex: 0 0 200px;
+}
+
+.testimonial-image img {
+    width: 300px;
+    height: 200px;
+    border-radius: 0;  /* Changed from 50% to 0 to make it square */
+    object-fit: cover;
+}
+
+.testimonial-text {
+    flex: 1;
+}
+
+.testimonial-text p {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+.testimonial-text h4 {
+    margin: 0;
+    color: #ffffff;
+}
+
+.testimonial-text span {
+    color: #4a9eff;
+}
+
+/* Navigation Dots */
+.carousel-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #4a9eff;
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.prev {
+    left: -50px;
+}
+
+.next {
+    right: -50px;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .testimonial-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonial-image {
+        flex: 0 0 150px;
+    }
+
+    .testimonial-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .carousel-arrow {
+        display: none;
+    }
+}
