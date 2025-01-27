@@ -2817,7 +2817,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #636565;
+			background-color: #1d242a;
 			color: #c8ece9;
 		}
 
@@ -4168,4 +4168,29 @@ input, select, textarea {
     .features-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.dark-theme {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.dark-theme .feature-column {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .feature-column:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.dark-theme h2, 
+.dark-theme h3, 
+.dark-theme p,
+.dark-theme .icon {
+    color: #ffffff;
+}
+
+.dark-theme .icon {
+    border-color: rgba(255, 255, 255, 0.3);
 }
