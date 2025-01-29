@@ -123,4 +123,55 @@
 		setInterval(() => plusSlides(1), 5000);
 	});
 
+	// Make form functions globally accessible
+	window.openForm = function() {
+		document.getElementById('formPopup').style.display = 'flex';
+	}
+
+	window.closeForm = function() {
+		document.getElementById('formPopup').style.display = 'none';
+	}
+
+	window.submitForm = function(event) {
+		event.preventDefault();
+		
+		const firstName = document.getElementById('firstName').value;
+		const lastName = document.getElementById('lastName').value;
+		const countryCode = document.getElementById('countryCode').value;
+		const phone = document.getElementById('phone').value;
+
+		// Create the email content
+		const formData = new FormData();
+		formData.append('firstName', firstName);
+		formData.append('lastName', lastName);
+		formData.append('phone', `${countryCode}${phone}`); // Combine country code with phone
+		
+		// Replace 'your-email@example.com' with your actual email address
+		fetch('https://formsubmit.co/your-email@example.com', {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => {
+			if (response.ok) {
+				alert('Thank you! We will contact you soon.');
+				closeForm();
+				document.getElementById('contactForm').reset();
+			} else {
+				throw new Error('Something went wrong');
+			}
+		})
+		.catch(error => {
+			alert('There was an error submitting your form. Please try again.');
+			console.error('Error:', error);
+		});
+	}
+
+	// Close popups when clicking outside
+	window.onclick = function(event) {
+		const formPopup = document.getElementById('formPopup');
+		if (event.target === formPopup) {
+			closeForm();
+		}
+	}
+
 })(jQuery);

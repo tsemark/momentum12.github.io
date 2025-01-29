@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url(all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
 
 /*
@@ -2842,7 +2842,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header p {
-				color: #a6e0db;
+				color: #ffffff;
 			}
 
 			.wrapper.style1 header.major h2, .wrapper.style1 header.major h3, .wrapper.style1 header.major h4, .wrapper.style1 header.major h5, .wrapper.style1 header.major h6 {
@@ -2850,7 +2850,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header.major p {
-				color: #c8ece9;
+				color: #ffffff;
 			}
 
 			.wrapper.style1 label {
@@ -3896,6 +3896,8 @@ input, select, textarea {
 
 			#footer .icons a {
 				color: rgba(255, 255, 255, 0.5);
+				border-bottom: none;  /* This removes the dotted line */
+				text-decoration: none;
 			}
 
 				#footer .icons a:hover {
@@ -4193,4 +4195,159 @@ input, select, textarea {
 
 .dark-theme .icon {
     border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Popup Form Styles */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: #2e3842;
+    padding: 2em;
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.form-container h3 {
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.close-btn:hover {
+    color: #4a9eff;
+}
+
+/* ... existing form styles ... */
+
+.form-row {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.form-group.half {
+    flex: 1;
+    min-width: 0; /* Prevents flex items from overflowing */
+}
+
+.form-group.half input {
+    width: 100%;
+    min-width: 0;
+}
+
+.phone-row {
+    display: flex;
+    gap: 0.5em;
+    align-items: stretch; /* Ensures equal height */
+}
+
+.form-group.country-code {
+    flex: 0 0 120px; /* Increased width to accommodate flags */
+}
+
+.form-group.phone-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-group select {
+    width: 100%;
+    height: 100%;
+    padding: 0.75em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%;
+    background-size: 0.65em auto;
+    padding-right: 2em;
+}
+
+.form-group select option {
+    background: #2e3842;
+    color: #fff;
+    padding: 0.5em;
+}
+
+/* Ensure inputs have the same height */
+.form-group input,
+.form-group select {
+    height: 3em;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    
+    .form-group.country-code {
+        flex: 0 0 auto;
+    }
+}
+
+/* Icon Sizes */
+.feature-column .fas {
+    font-size: 2.5em;  /* Bigger icons in feature columns */
+    margin-bottom: 0.5em;
+    color: #ffffff;
+}
+
+footer .icons .fas,
+footer .icons .fab {
+    font-size: 1.2em;  /* Smaller icons in footer (reduced from 1.5em) */
+}
+
+/* Hover effect for icons */
+.feature-column .fas:hover,
+footer .icons .fas:hover,
+footer .icons .fab:hover {
+    color: #4a9eff;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
