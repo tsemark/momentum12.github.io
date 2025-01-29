@@ -3582,6 +3582,9 @@ input, select, textarea {
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+		/* Remove: to make the banner default */
+		background-position: top center !important; /* Forces focus on top of image */
+		background-size: cover;
 	}
 
 		#banner h2 {
@@ -4350,4 +4353,19 @@ footer .icons .fab:hover {
     color: #4a9eff;
     transform: scale(1.1);
     transition: all 0.3s ease;
+}
+
+/* Ensure banner is visible on mobile */
+@media screen and (max-width: 736px) {
+    #banner {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-position: top center !important;
+    }
+    
+    #banner .inner {
+        padding-top: 4em;
+    }
 }

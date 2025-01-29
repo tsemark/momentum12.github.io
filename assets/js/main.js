@@ -174,4 +174,22 @@
 		}
 	}
 
+	// Add this to your existing JavaScript
+	function scrollToSection(sectionId) {
+		document.getElementById(sectionId).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		});
+	}
+
+	// When page loads, scroll to top on mobile devices
+	document.addEventListener('DOMContentLoaded', function() {
+		if (window.innerWidth <= 736) { // Mobile breakpoint
+			window.scrollTo({
+				top: 0,
+				behavior: 'instant'
+			});
+		}
+	});
+
 })(jQuery);
