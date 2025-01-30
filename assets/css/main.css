@@ -4369,3 +4369,23 @@ footer .icons .fab:hover {
         padding-top: 4em;
     }
 }
+
+#banner {
+    background-position: top center !important;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* iPad Pro landscape specific adjustments */
+@media only screen 
+and (min-width: 1024px) 
+and (max-width: 1366px) 
+and (orientation: landscape) {
+    #banner {
+        background-size: 100% auto; /* Forces full width while maintaining aspect ratio */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
