@@ -1711,7 +1711,7 @@ input, select, textarea {
 		}
 
 		@media only screen 
-		and (min-width: 1200px) 
+		and (min-width: 834px) 
 		and (max-width: 1366px) 
 		and (orientation: landscape) {
     		#banner {
@@ -1725,28 +1725,6 @@ input, select, textarea {
     		#banner .inner {
         		padding-top: 4em;
     		}
-		}
-
-		@media only screen 
-		and (min-device-width: 834px) 
-		and (max-device-width: 1194px) 
-		and (orientation: landscape) {
-			#banner {
-				background-size: contain !important;  
-				background-position: center center !important;  
-				background-repeat: no-repeat !important;  
-				min-height: 100vh;
-				display: flex;
-				align-items: center;  
-				justify-content: center;  
-				-webkit-transform: translate3d(0, 0, 0);  
-				-webkit-backface-visibility: hidden;
-			}
-		
-			#banner .inner {
-				padding: 4em 1em 0;  
-				text-align: center;  
-			}
 		}
 
 	body.is-preload #banner h2 {
