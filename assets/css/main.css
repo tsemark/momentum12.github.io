@@ -1566,9 +1566,6 @@ input, select, textarea {
 		overflow: hidden;
 		position: relative;
 		text-align: center;
-
-		-webkit-transform: translate3d(0, 0, 0);
-		-webkit-backface-visibility: hidden;
 	}
 
 		#banner h2 {
@@ -1718,8 +1715,7 @@ input, select, textarea {
 		and (max-width: 1366px) 
 		and (orientation: landscape) {
     		#banner {
-        		background-size: 100% auto !important; /* This will show the full width of the image */
-        		background-position: top center !important;
+        		background-size: 100% auto !important; 
         		min-height: 100vh;
         		display: flex;
         		flex-direction: column;
@@ -1735,26 +1731,21 @@ input, select, textarea {
 		and (min-device-width: 834px) 
 		and (max-device-width: 1194px) 
 		and (orientation: landscape) {
-    		#banner {
-        		background-size: cover !important; /* Try cover to see if it adjusts better */
-        		background-position: center top !important;
-        		min-height: 100vh;
-        		display: flex;
-        		flex-direction: column;
-        		justify-content: center;
-    		}
-
-    		#banner .inner {
-        		padding-top: 4em;
-    		}
-		}
-
-		@supports (-webkit-touch-callout: none) {
-			@media (min-device-width: 834px) and (orientation: landscape) {
-				#banner {
-					background-size: cover !important;
-					background-position: center top !important;
-				}
+			#banner {
+				background-size: contain !important;  
+				background-position: center center !important;  
+				background-repeat: no-repeat !important;  
+				min-height: 100vh;
+				display: flex;
+				align-items: center;  
+				justify-content: center;  
+				-webkit-transform: translate3d(0, 0, 0);  
+				-webkit-backface-visibility: hidden;
+			}
+		
+			#banner .inner {
+				padding: 4em 1em 0;  
+				text-align: center;  
 			}
 		}
 
