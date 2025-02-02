@@ -4389,3 +4389,50 @@ and (orientation: landscape) {
         justify-content: center;
     }
 }
+
+/* iPad and iPad Pro in both orientations */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1366px) {
+    #banner {
+        background-size: cover !important;
+        background-position: top center !important;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #banner .inner {
+        padding-top: 4em;
+    }
+}
+
+/* iPad portrait specific */
+@media only screen 
+and (min-width: 768px) 
+and (max-width: 1024px) 
+and (orientation: portrait) {
+    #banner {
+        background-size: cover !important;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 736px) {
+    #banner {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-position: top center !important;
+    }
+    
+    #banner .inner {
+        padding-top: 4em;
+    }
+}
