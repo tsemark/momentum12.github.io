@@ -1566,6 +1566,9 @@ input, select, textarea {
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+
+		-webkit-transform: translate3d(0, 0, 0);
+		-webkit-backface-visibility: hidden;
 	}
 
 		#banner h2 {
@@ -1744,6 +1747,15 @@ input, select, textarea {
     		#banner .inner {
         		padding-top: 4em;
     		}
+		}
+
+		@supports (-webkit-touch-callout: none) {
+			@media (min-device-width: 834px) and (orientation: landscape) {
+				#banner {
+					background-size: cover !important;
+					background-position: center top !important;
+				}
+			}
 		}
 
 	body.is-preload #banner h2 {
