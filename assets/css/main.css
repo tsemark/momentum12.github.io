@@ -4395,7 +4395,7 @@ and (orientation: landscape) {
 and (min-device-width: 768px) 
 and (max-device-width: 1366px) {
     #banner {
-        background-size: cover !important;
+        background-size: 100% auto !important; /* This will show the full width of the image */
         background-position: top center !important;
         min-height: 100vh;
         display: flex;
@@ -4414,11 +4414,8 @@ and (min-width: 768px)
 and (max-width: 1024px) 
 and (orientation: portrait) {
     #banner {
-        background-size: cover !important;
+        background-size: auto 100vh !important; /* This will ensure full height coverage */
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 }
 
@@ -4426,9 +4423,7 @@ and (orientation: portrait) {
 @media screen and (max-width: 736px) {
     #banner {
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        background-size: cover !important;
         background-position: top center !important;
     }
     
