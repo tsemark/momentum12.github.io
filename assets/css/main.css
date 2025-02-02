@@ -1734,6 +1734,22 @@ input, select, textarea {
     		}
 		}
 
+		@supports (-webkit-touch-callout: none) {
+			@media (min-device-width: 834px) and (orientation: landscape),
+				   (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+				#banner {
+					background-size: cover !important;         
+					background-position: center center !important;  
+					background-repeat: no-repeat !important;
+					background-attachment: fixed;
+					min-height: 100vh;                         
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+
 	body.is-preload #banner h2 {
 		-moz-transform: scale(0.95);
 		-webkit-transform: scale(0.95);
