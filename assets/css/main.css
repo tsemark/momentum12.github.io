@@ -1710,6 +1710,24 @@ input, select, textarea {
 
 		}
 
+		@media only screen 
+		and (min-width: 1024px) 
+		and (max-width: 1366px) 
+		and (orientation: landscape) {
+    		#banner {
+        		background-size: 100% auto !important; /* This will show the full width of the image */
+        		background-position: top center !important;
+        		min-height: 100vh;
+        		display: flex;
+        		flex-direction: column;
+        		justify-content: center;
+    		}
+
+    		#banner .inner {
+        		padding-top: 4em;
+    		}
+		}
+
 	body.is-preload #banner h2 {
 		-moz-transform: scale(0.95);
 		-webkit-transform: scale(0.95);
