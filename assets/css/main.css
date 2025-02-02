@@ -1720,6 +1720,9 @@ input, select, textarea {
         		display: flex;
         		flex-direction: column;
         		justify-content: center;
+
+				-webkit-transform: translate3d(0, 0, 0);  /* Fixes Safari rendering issues */
+				-webkit-backface-visibility: hidden;
     		}
 
     		#banner .inner {
