@@ -1715,11 +1715,12 @@ input, select, textarea {
 		and (max-width: 1366px) 
 		and (orientation: landscape) {
     		#banner {
-        		background-size: 100% auto !important; 
+				background-size: cover !important;  
         		min-height: 100vh;
         		display: flex;
         		flex-direction: column;
         		justify-content: center;
+				position: relative; 
 
 				-webkit-transform: translate3d(0, 0, 0);  /* Fixes Safari rendering issues */
 				-webkit-backface-visibility: hidden;
